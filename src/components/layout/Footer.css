@@ -17,10 +17,8 @@
 
 /* Tipografía de la marca */
 .footer-logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem; 
+  display: block;
 }
 
 .logo-accent {
@@ -33,6 +31,24 @@
   margin-top: 0.25rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.footer-logo-img {
+  height: 65px; 
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.9); 
+  
+  
+  transform: scale(1.5);
+  transform-origin: center center; 
+  
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.footer-logo-link:hover .footer-logo-img {
+  filter: brightness(1);
+  transform: scale(1.6); /* Un poco más grande al hacer hover */
 }
 
 /* Sección de Dirección y Contacto */
@@ -127,4 +143,12 @@
   .footer-social-legal .social-icons {
     justify-content: flex-end;
   }
+
+ .footer-logo {
+    max-width: 180px; /* Un poco más pequeño en celular para que no desborde */
+    margin: 0 auto 1.5rem auto; /* Lo centramos en pantallas chicas */
+    display: block;
+  }
+
+
 }

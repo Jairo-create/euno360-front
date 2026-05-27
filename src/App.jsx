@@ -26,7 +26,7 @@ function App() {
       
       {view === 'home' && (
         <>
-          <Hero />
+          <Hero setView={setView} />
           {/* Le pasamos setView a Services para que los botones funcionen */}
           <Services setView={setView} />
           <Importance />

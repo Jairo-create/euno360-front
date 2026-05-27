@@ -19,6 +19,9 @@ const translations = {
     hero_title: "Transformación Consciente para tu Organización",
     hero_subtitle: "Coaching ontológico, desarrollo de liderazgo y estrategias de ventas para potenciar tu negocio y bienestar sostenibles.",
     hero_cta: "Inicia tu transformación",
+    hero_title2: "Cultura y Resultados",
+    hero_subtitle2: "Un abordaje 360° para transformar tu organización de manera integral.",
+    hero_cta2: "Ver Programas Integrales",
     promo_bar: "Descubre el poder de nuestros Programas Integrales 360° para empresas.",
 
     // --- SECCIONES INFORMATIVAS (Home) ---
@@ -49,7 +52,7 @@ const translations = {
 
     // --- NOSOTROS (About Us) ---
     about_title: "Conocé Euno ",
-    about_subtitle: "Humanizando los negocios, potenciando resultados.",
+    about_subtitle: "Impulsamos personas. Potenciamos resultados.",
     mision_title: "Misión",
     mision_desc: "Transformar empresas y potenciar marcas personales a través de la integración orgánica del coaching ontológico, la gestión emocional, el marketing y las ventas, generando estrategias conscientes, conversaciones efectivas y acciones que impulsen resultados extraordinarios con bienestar sostenible.",
     vision_title: "Visión",
@@ -172,6 +175,9 @@ const translations = {
     hero_title: "Conscious Transformation for Your Organization",
     hero_subtitle: "Ontological coaching, leadership development, and sales strategies to boost your business and sustainable well-being.",
     hero_cta: "Start your transformation",
+    hero_title2: "Culture and Results",
+    hero_subtitle2: "A 360° approach to comprehensively transform your organization.",
+    hero_cta2: "View Comprehensive Programs",
     promo_bar: "Discover the power of our 360° Comprehensive Programs for companies.",
 
     // --- SECCIONES INFORMATIVAS (Home) ---
@@ -202,7 +208,7 @@ const translations = {
 
     // --- NOSOTROS (About Us) ---
     about_title: "Get to know Euno 360",
-    about_subtitle: "Humanizing businesses, boosting results.",
+    about_subtitle: "We empower people. We boost results.",
     mision_title: "Mission",
     mision_desc: "To transform companies and boost personal brands through the organic integration of ontological coaching, emotional management, marketing, and sales, generating conscious strategies, effective conversations, and actions that drive extraordinary results with sustainable well-being.",
     vision_title: "Vision",
@@ -325,6 +331,9 @@ const translations = {
     hero_title: "Transformação Consciente para sua Organização",
     hero_subtitle: "Coaching ontológico, desenvolvimento de liderança e estratégias de vendas para impulsionar seu negócio e bem-estar sustentável.",
     hero_cta: "Inicie sua transformação",
+    hero_title2: "Cultura e Resultados",
+    hero_subtitle2: "Uma abordagem 360° para transformar sua organização de forma integral.",
+    hero_cta2: "Ver Programas Integrais",
     promo_bar: "Descubra o poder de nossos Programas Integrais 360° para empresas.",
 
     // --- SECCIONES INFORMATIVAS (Home) ---
@@ -355,7 +364,7 @@ const translations = {
 
     // --- NOSOTROS (About Us) ---
     about_title: "Conheça a Euno 360",
-    about_subtitle: "Humanizando negócios, potencializando resultados.",
+    about_subtitle: "Empoderamos pessoas. Impulsionamos resultados.",
     mision_title: "Missão",
     mision_desc: "Transformar empresas e potencializar marcas pessoais através da integração orgânica do coaching ontológico, gestão emocional, marketing e vendas, gerando estratégias conscientes, conversas efetivas e ações que impulsionam resultados extraordinários com bem-estar sustentável.",
     vision_title: "Visão",
