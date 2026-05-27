@@ -1,0 +1,172 @@
+
+.service-detail-page {
+  margin-top: 64px;
+  animation: fadeInService 0.4s ease-out forwards;
+  background-color: var(--white);
+  padding-bottom: 5rem;
+}
+
+@keyframes fadeInService {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Encabezado del servicio */
+.service-detail-header {
+  position: relative;
+  width: 100%;
+  color: var(--white);
+  overflow: hidden; 
+}
+
+/* La imagen base */
+.service-header-bg {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%; /* Ahora este 100% será exactamente el alto del header */
+  object-fit: cover;
+  object-position: center top; /* Asegura que se vea la mejor parte de la foto */
+  z-index: 1;
+}
+
+/* La capa oscura por encima de la imagen pero por debajo del texto */
+.service-header-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 0 5rem 0; 
+  width: 100%;
+}
+
+.service-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.service-detail-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  position: relative; 
+}
+
+.service-tagline {
+  font-size: 1.15rem;
+  color: #E0E0E0; 
+  max-width: 700px;
+  line-height: 1.6;
+  position: relative;
+}
+/* Grilla de Distribución */
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin-top: 5rem;
+  padding: 0 24px;
+}
+
+.detail-section h2 {
+  font-size: 1.6rem;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.detail-divider {
+  height: 4px;
+  width: 50px;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-list li {
+  font-size: 1.05rem;
+  color: var(--gray-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.detail-list .bullet {
+  font-weight: 900;
+}
+
+/* Lista especializada para diferenciales */
+.spec-list li {
+  padding-left: 1.25rem;
+  border-left: 4px solid;
+}
+
+.margin-top-md { margin-top: 4rem; }
+
+/* Barra Lateral Derecha */
+.sidebar-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.cta-box {
+  background-color: var(--gray-light);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cta-box h3 {
+  font-size: 1.2rem;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.cta-box p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: filter 0.2s;
+}
+
+.sticky-sidebar {
+  margin-top: 1.5rem; 
+}
+
+.btn-cta:hover { filter: brightness(1.1); }
+
+/* --- Responsive Layout --- */
+@media (min-width: 992px) {
+  .service-detail-grid {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+  .sticky-sidebar {
+    position: sticky;
+    top: 120px; /* Queda flotando en scroll */
+    margin-top: 3.5rem;
+  }
+}

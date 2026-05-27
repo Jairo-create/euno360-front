@@ -1,0 +1,64 @@
+
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  /* Paleta de colores original */
+  --green-main: #2E7D32;
+  --green-soft: #A5D6A7;
+  --red-main: #C62828;
+  --red-soft: #EF9A9A;
+  --yellow-main: #F9A825;
+  --yellow-soft: #FFF59D;
+  --black: #1A1A1A;
+  --gray-dark: #333333;
+  --gray-light: #F5F5F5;
+  --white: #FFFFFF;
+}
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--gray-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Clases de Utilidad Globales */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.section-divider {
+  height: 4px;
+  width: 80px;
+  border-radius: 2px;
+  margin: 0 auto 2rem auto;
+}

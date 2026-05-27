@@ -1,0 +1,76 @@
+
+.info-section {
+  padding: 5rem 0;
+}
+
+.bg-white { background-color: var(--white); }
+.bg-black { background-color: var(--black); }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Invierte el orden de la grilla en escritorio para la sección de Resultados */
+.info-grid-reverse .info-text-container {
+  order: 1;
+}
+.info-grid-reverse .info-image-container {
+  order: 2;
+}
+
+@media (max-width: 767px) {
+  .info-grid-reverse .info-text-container { order: 2; }
+  .info-grid-reverse .info-image-container { order: 1; }
+}
+
+.info-image-container {
+  width: 100%;
+}
+
+.info-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.rounded-shadow {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.info-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.text-dark { color: var(--black); }
+.text-white { color: var(--white); }
+
+.info-divider {
+  height: 4px;
+  width: 60px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.divider-green { background-color: var(--green-main); }
+.divider-red { background-color: var(--red-main); }
+
+.info-paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.text-gray { color: #555555; }
+.text-light-gray { color: #CCCCCC; }
