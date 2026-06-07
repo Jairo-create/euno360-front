@@ -130,63 +130,63 @@
   height: 20px;
 }
 
+/* --- MENÚ DESPLEGABLE CLÁSICO Y COMPACTO --- */
 .dropdown-menu {
-  
   visibility: hidden;
   opacity: 0;
   transform: translateY(15px); 
-  
- 
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
   position: absolute;
-  top: calc(100% + 5px); /* Separación sutil de la barra superior */
-  left: -20px; /* Centrado visual relativo a la palabra "Servicios" */
+  top: calc(100% + 5px);
+  left: -20px;
   background-color: var(--white);
-  min-width: 280px; /* Un poco más ancho para respirar mejor */
-  
-  /* Sombra más amplia, difuminada y elegante */
+  min-width: 280px; 
+  /* Redujimos el padding superior e inferior de 1.5rem a 0.8rem */
+  padding: 0.8rem 0; 
   box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
   border-radius: 12px;
-  padding: 1.5rem 0;
   z-index: 100;
   border: 1px solid rgba(0,0,0,0.04);
+  display: block; 
 }
 
-/* Al pasar el mouse, revelamos suavemente */
+/* Revelamos el menú al hacer hover */
 .dropdown:hover .dropdown-menu {
   visibility: visible;
   opacity: 1;
-  transform: translateY(0); /* Sube a su posición original */
+  transform: translateY(0);
 }
 
-/* --- Estilos internos del menú --- */
-.dropdown-section {
-  display: flex;
-  flex-direction: column;
+
+.desktop-menu .dropdown-divider {
+  display: block;
 }
 
+.dropdown-divider {
+  height: 1px;
+  background-color: rgba(0,0,0,0.06);
+  margin: 0.4rem 1.5rem; 
+}
+
+/* Títulos de sección compactos */
 .dropdown-title {
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 0 2rem; /* Más aire a los costados */
-  margin-bottom: 0.6rem;
+  padding: 0 2rem; 
+  margin-bottom: 0.3rem; 
   letter-spacing: 0.5px;
 }
 
-.title-green { color: var(--green-main); }
-.title-red { color: var(--red-main); }
-.title-yellow { color: var(--yellow-main); }
-
+/* Enlaces optimizados para que quepan todos */
 .dropdown-section a {
   color: var(--gray-dark);
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 0.5rem 2rem;
+  font-size: 0.85rem; 
+  padding: 0.35rem 2rem; 
   transition: all 0.2s ease;
   position: relative;
+  display: block;
 }
-
 
 .dropdown-section a:hover {
   background-color: #F8F9FA;
@@ -194,7 +194,7 @@
   padding-left: 2.3rem; 
 }
 
-
+/* Barrita lateral de color al hacer hover restaurada */
 .dropdown-section a::before {
   content: '';
   position: absolute;
@@ -206,21 +206,6 @@
   transition: background-color 0.2s ease;
 }
 
-.dropdown-section:nth-child(1) a:hover::before { background-color: var(--green-main); }
-.dropdown-section:nth-child(3) a:hover::before { background-color: var(--red-main); }
-.dropdown-section:nth-child(5) a:hover::before { background-color: var(--yellow-main); }
-
-.dropdown-section a.subtitle {
-  color: #888;
-  font-size: 0.8rem;
-  padding-top: 0;
-}
-
-.dropdown-divider {
-  height: 1px;
-  background-color: rgba(0,0,0,0.06);
-  margin: 1rem 1.5rem;
-}
 
 .lang-switcher,
 .mobile-lang-switcher {
@@ -385,6 +370,51 @@
 
 .mobile-lang-switcher span:active {
   opacity: 1;
+}
+
+.title-gradient {
+  background: linear-gradient(to right, var(--green-main), var(--yellow-main), var(--red-main));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* 2. Matemáticas corregidas para el menú de Escritorio (Hover lines) */
+/* Sección 1: Coaching, Sección 3: Ventas, Sección 5: Marketing, Sección 7: Integrales */
+.dropdown-section:nth-child(1) a:hover::before { background-color: var(--green-main); }
+.dropdown-section:nth-child(3) a:hover::before { background-color: var(--red-main); }
+.dropdown-section:nth-child(5) a:hover::before { background-color: var(--yellow-main); }
+.dropdown-section:nth-child(7) a:hover::before { 
+  background: linear-gradient(to bottom, var(--green-main), var(--yellow-main), var(--red-main)); 
+}
+
+/* 3. Matemáticas corregidas para el menú Móvil (Active lines) */
+/* Sección 1: Coaching, Sección 2: Ventas, Sección 3: Marketing, Sección 4: Integrales */
+.mobile-dropdown-section:nth-child(1) a:active { border-left-color: var(--green-main); color: var(--white); }
+.mobile-dropdown-section:nth-child(2) a:active { border-left-color: var(--red-main); color: var(--white); }
+.mobile-dropdown-section:nth-child(3) a:active { border-left-color: var(--yellow-main); color: var(--white); }
+.mobile-dropdown-section:nth-child(4) a:active { 
+  /* Usamos border-image para el gradiente en el borde izquierdo móvil */
+  border-left: 2px solid;
+  border-image: linear-gradient(to bottom, var(--green-main), var(--yellow-main), var(--red-main)) 1; 
+  color: var(--white); 
+}
+
+.dropdown-title.title-green,
+.mobile-dropdown-title.title-green { 
+  color: var(--green-main); 
+}
+
+.dropdown-title.title-red,
+.mobile-dropdown-title.title-red { 
+  color: var(--red-main); 
+}
+
+.dropdown-title.title-yellow,
+.mobile-dropdown-title.title-yellow { 
+  color: var(--yellow-main); 
 }
 
 /* Media Query para Desktop */

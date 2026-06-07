@@ -69,6 +69,51 @@
 
 .btn-more-info:hover { filter: brightness(1.1); }
 
+/* --- EFECTO GRADIENTE PARA PROGRAMAS INTEGRALES 360 --- */
+.card-integral {
+  position: relative;
+  border-top: none !important; 
+}
+
+/* Pseudo-elemento para crear el borde izquierdo multicolor */
+.card-integral::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px; /* Mismo grosor que tu borde superior */
+  background: linear-gradient(to right, var(--green-main), var(--yellow-main), var(--red-main));
+  border-top-left-radius: 8px; /* Ajusta este valor al border-radius de tu tarjeta si lo tiene */
+  border-top-right-radius: 8px;
+}
+
+.text-gradient-360 {
+  background: linear-gradient(to right, var(--green-main), #D4AF37, var(--red-main));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  
+  background-clip: text; 
+  color: transparent; 
+  
+  display: inline-block;
+}
+
+.btn-gradient-360 {
+  background: linear-gradient(to right, var(--green-main), var(--yellow-main), var(--red-main));
+  color: var(--white) !important;
+  font-weight: bold;
+  transition: filter 0.3s ease;
+}
+
+.btn-gradient-360:hover {
+  filter: brightness(1.15);
+}
+
+.bg-gradient-360 {
+  background: linear-gradient(to right, var(--green-main), var(--yellow-main), var(--red-main)) !important;
+}
 /* Responsive Grid */
 @media (min-width: 768px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }

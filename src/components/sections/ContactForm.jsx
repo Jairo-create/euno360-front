@@ -4,7 +4,8 @@ import Swal from 'sweetalert2';
 import { useLanguage } from '../../context/LanguageContext';
 import './ContactForm.css';
 
-const ContactForm = () => {
+// 1. Recibimos setView como prop
+const ContactForm = ({ setView }) => {
   const { t } = useLanguage();
   
   const [formData, setFormData] = useState({
@@ -23,7 +24,6 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // 1. Validar Nombre (> 4 caracteres)
     if (formData.nombre.trim().length <= 4) {
       return Swal.fire({
         icon: 'warning',
@@ -33,7 +33,6 @@ const ContactForm = () => {
       });
     }
 
-    // 2. Validar Email usando Expresiones Regulares (Regex)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       return Swal.fire({
@@ -44,7 +43,6 @@ const ContactForm = () => {
       });
     }
 
-    // 3. Validar Política de Privacidad
     if (!formData.politica) {
       return Swal.fire({
         icon: 'warning',
@@ -54,25 +52,37 @@ const ContactForm = () => {
       });
     }
 
-    // Si todas las validaciones pasan, iniciamos el envío
     setLoading(true);
 
     try {
-      // Simulamos latencia de red de 1.5 segundos
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      Swal.fire({
-        icon: 'success',
-        title: t('form_success'),
-        text: t('form_success_text'),
-        confirmButtonColor: '#2E7D32'
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${API_URL}/api/contacto`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      
-      setFormData({
-        nombre: '', empresa: '', email: '', telefono: '', mensaje: '', politica: false
-      });
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        Swal.fire({
+          icon: 'success',
+          title: t('form_success'),
+          text: t('form_success_text'),
+          confirmButtonColor: '#2E7D32'
+        });
+
+        setFormData({
+          nombre: '', empresa: '', email: '', telefono: '', mensaje: '', politica: false
+        });
+      } else {
+        throw new Error(result.message || 'Error en el servidor');
+      }
+
     } catch (error) {
+      console.error("Error al enviar el formulario:", error);
       Swal.fire({
         icon: 'error',
         title: t('form_error'),
@@ -90,7 +100,6 @@ const ContactForm = () => {
         <h2 className="section-title">{t('form_title')}</h2>
         <div className="section-divider multi-color-divider"></div>
 
-        
         <form onSubmit={handleSubmit} className="contact-form" noValidate>
           <div className="form-grid">
             <div className="input-group">
@@ -119,9 +128,37 @@ const ContactForm = () => {
             <textarea id="mensaje" rows="4" value={formData.mensaje} onChange={handleChange} required></textarea>
           </div>
 
+          {/* 2. Sección del Checkbox actualizada con Enlaces Legales */}
           <div className="checkbox-group">
             <input id="politica" type="checkbox" checked={formData.politica} onChange={handleChange} required />
-            <label htmlFor="politica">{t('lbl_policy')}</label>
+            <label htmlFor="politica">
+              He leído y acepto la{' '}
+              <a 
+                href="#privacidad" 
+                className="form-legal-link"
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  e.stopPropagation(); // Evita que se marque el checkbox al hacer clic en el texto
+                  setView('privacidad'); 
+                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                }}
+              >
+                Política de Privacidad
+              </a>
+              {' '}y los{' '}
+              <a 
+                href="#terminos" 
+                className="form-legal-link"
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  e.stopPropagation();
+                  setView('terminos'); 
+                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                }}
+              >
+                Términos y Condiciones
+              </a>.
+            </label>
           </div>
 
           <button type="submit" className="btn-submit" disabled={loading}>

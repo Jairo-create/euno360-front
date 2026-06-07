@@ -4,11 +4,14 @@ import { useLanguage } from '../../context/LanguageContext';
 import logoEuno from '../../assets/logo-euno.png'; 
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ setView }) => { // <-- ¡Recibimos setView aquí!
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
-  const scrollToTop = () => {
+  // Función unificada para navegar y subir al top de la página
+  const handleNavigation = (e, viewName) => {
+    e.preventDefault();
+    setView(viewName);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -19,7 +22,7 @@ const Footer = () => {
         {/* Columna 1: Identidad con Imagen de Logo */}
         <div className="footer-brand">
           <div className="footer-logo-container">
-            <a href="#" onClick={scrollToTop} className="footer-logo-link" aria-label="Volver al inicio">
+            <a href="#" onClick={(e) => handleNavigation(e, 'home')} className="footer-logo-link" aria-label="Volver al inicio">
               <img src={logoEuno} alt="Euno 360 Logo Footer" className="footer-logo-img" />
             </a>
           </div>
@@ -38,8 +41,8 @@ const Footer = () => {
           </address>
         </div>
 
-        {/* Columna 3: Redes Sociales */}
-      <div className="footer-social-legal">
+        {/* Columna 3: Redes Sociales y Legales */}
+        <div className="footer-social-legal">
           <div className="social-icons">
             {/* Instagram */}
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -54,18 +57,18 @@ const Footer = () => {
               </svg>
             </a>
             {/* WhatsApp */}
-            {/* WhatsApp (Nativo Line-Art perfecto) */}
-              <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                {/* Nube de chat */}
-            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-            {/* Teléfono interno (dibujado como línea de un solo trazo) */}
-            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
               </svg>
             </a>
           </div> 
-          <div className="footer-legal-links">
-            <a href="#privacy" className="privacy-link">Política de Privacidad</a>
+          
+          {/* Enlaces Legales Agregados */}
+          <div className="footer-legal-links" style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '1rem' }}>
+            <a href="#" onClick={(e) => handleNavigation(e, 'privacidad')} className="privacy-link">Política de Privacidad</a>
+            <a href="#" onClick={(e) => handleNavigation(e, 'terminos')} className="privacy-link">Términos y Condiciones</a>
           </div>
         </div>
 
