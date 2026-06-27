@@ -16,7 +16,7 @@ const translations = {
     cta_ready_desc: "Agenda una reunión diagnóstica hoy mismo.",
 
     // --- HERO BANNER ---
-    hero_title: "Transformación Consciente para tu Organización",
+    hero_title: "Transformación consciente para tu organización",
     hero_subtitle: "Coaching ontológico, desarrollo de liderazgo y estrategias de ventas para potenciar tu negocio y bienestar sostenibles.",
     hero_cta: "Inicia tu transformación",
     hero_title2: "Cultura y Resultados",
@@ -25,7 +25,7 @@ const translations = {
     promo_bar: "Descubre el poder de nuestros Programas Integrales 360° para empresas.",
 
     // --- SECCIONES INFORMATIVAS (Home) ---
-    importance_title: "Importancia del Coaching en la Actualidad",
+    importance_title: "Importancia del coaching en la actualidad.",
     importance_desc: "En un mundo en constante cambio, el coaching se ha convertido en una herramienta esencial para el desarrollo personal y profesional. Permite a individuos y organizaciones adaptarse, crecer y alcanzar su máximo potencial mediante conversaciones transformadoras y metodologías probadas.",
     results_title: "¿Qué resultados se obtienen con nuestros servicios?",
     results_desc: "Incremento en la productividad, mejora en la comunicación interna, desarrollo del liderazgo, aumento en las ventas y una cultura organizacional sólida y alineada con los objetivos del negocio. Nuestros clientes reportan resultados tangibles desde las primeras sesiones.",
@@ -118,7 +118,7 @@ const translations = {
     serv_org_dif2: "Intervenciones prácticas con impacto en resultados",
     serv_org_dif3: "Integración de coaching + emocionalidad + negocio",
 
-    serv_mentoria_title: "Mentorías en Ventas",
+    serv_mentoria_title: "Mentorías en ventas",
     serv_mentoria_subtitle: "Identidad & Cierre Comercial",
     serv_mentoria_tagline: "Para vendedores, emprendedores o equipos comerciales.",
     serv_mentoria_item1: "Mentorías 1:1 para vendedores",
@@ -131,8 +131,8 @@ const translations = {
     serv_mentoria_dif2: "Integración de coaching + ventas + emocionalidad",
     serv_mentoria_dif3: "Foco en resultados sostenibles (no solo scripts)",
 
-    serv_cap_title: "Capacitaciones en Ventas",
-    serv_cap_subtitle: "Entrenamiento Comercial Corporativo",
+    serv_cap_title: "Capacitaciones en ventas",
+    serv_cap_subtitle: "Entrenamiento comercial corporativo",
     serv_cap_tagline: "Para equipos comerciales de empresas.",
     serv_cap_item1: "Programas de formación en ventas",
     serv_cap_item2: "Técnicas de cierre y negociación",
@@ -215,7 +215,7 @@ const translations = {
     cta_ready_desc: "Schedule a diagnostic meeting today.",
 
     // --- HERO BANNER ---
-    hero_title: "Conscious Transformation for Your Organization",
+    hero_title: "Conscious Transformation for your organization",
     hero_subtitle: "Ontological coaching, leadership development, and sales strategies to boost your business and sustainable well-being.",
     hero_cta: "Start your transformation",
     hero_title2: "Culture and Results",

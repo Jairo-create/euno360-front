@@ -54,8 +54,10 @@ const ContactForm = ({ setView }) => {
 
     setLoading(true);
 
-    try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  try {
+      // Reemplaza esto con la URL que te dio Render.com:
+      const API_URL = 'https://backend-euno360.onrender.com'; 
+      
       const response = await fetch(`${API_URL}/api/contacto`, {
         method: 'POST',
         headers: {
