@@ -56,13 +56,11 @@ const ContactForm = ({ setView }) => {
 
   try {
       // Reemplaza esto con la URL que te dio Render.com:
-      const API_URL = 'https://backend-euno360.onrender.com'; 
+      const API_URL = 'https://euno360.com/contacto.php'; 
       
-      const response = await fetch(`${API_URL}/api/contacto`, {
+     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
